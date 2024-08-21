@@ -4,13 +4,13 @@ let mainGrid = document.querySelector(".main-grid");
 
 for (let i =0; i < 16; i++) {
     let newDiv = document.createElement("div");
-    newDiv.setAttribute("class","pixel-inactive");
+    newDiv.setAttribute("class","pixel");
 
     mainGrid.appendChild(newDiv);
 }
 
 function changeColor(target){
-    target.setAttribute("class", "pixel-active");
+    target.style.background = "pink";
 }
 
 mainGrid.addEventListener("mouseover", (event) => {
