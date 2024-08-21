@@ -1,5 +1,12 @@
+let lastHue = 300;
+
 function changeColor(target){
-    target.style.background = "pink";
+    if (target.style.background == `hsl(${lastHue},76%,72%)`){
+        return;
+    } else {
+        lastHue = (lastHue + 7) % 360;
+        target.style.background = `hsl(${lastHue},76%,72%)`;
+    }
 }
 
 function clearGrid() {
@@ -19,10 +26,6 @@ function generateSquares(numberPerSide) {
     
         mainGrid.appendChild(newDiv);
     }
-}
-
-function getColor(previousColor){
-    pass;
 }
 
 let mainGrid = document.querySelector(".main-grid");
