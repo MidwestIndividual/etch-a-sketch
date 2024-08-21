@@ -5,13 +5,14 @@
     aspect-ratio: 1;
 }
 
-.pixel {
+.pixel-inactive,
+.pixel-active {
     background-color: grey;
     flex-shrink: 0;
     flex-grow: 0;
     flex-basis: 25%;
 }
 
-.pixel::hov {
+.pixel-active {
     background-color: pink;
 }
