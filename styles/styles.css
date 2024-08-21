@@ -1,5 +1,17 @@
+.main-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
 .pixel {
     background-color: grey;
-    height: 20px;
-    width: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 25%;
+}
+
+.pixel::hov {
+    background-color: pink;
 }
