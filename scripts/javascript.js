@@ -3,6 +3,7 @@ let mainGrid = document.querySelector(".main-grid");
 for (let i =0; i < 16; i++) {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class","pixel");
+    newDiv.style.flexBasis = "25%";
 
     mainGrid.appendChild(newDiv);
 }
@@ -22,11 +23,16 @@ function clearGrid() {
     })
 }
 
-function generateSquares(numberSquares) {
+function generateSquares(numberPerSide) {
     clearGrid()
 
-    let width = 100 / numberSquares + "%";
+    let width = 100 / numberPerSide + "%";
 
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("class","pixel");
+    for (let i = 0; i < numberPerSide**2; i++){
+        let newDiv = document.createElement("div");
+        newDiv.setAttribute("class","pixel");
+        newDiv.style.flexBasis = width;
+    
+        mainGrid.appendChild(newDiv);
+    }
 }
