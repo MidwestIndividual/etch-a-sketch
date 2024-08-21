@@ -24,8 +24,6 @@ function clearGrid() {
 }
 
 function generateSquares(numberPerSide) {
-    clearGrid()
-
     let width = 100 / numberPerSide + "%";
 
     for (let i = 0; i < numberPerSide**2; i++){
@@ -36,3 +34,21 @@ function generateSquares(numberPerSide) {
         mainGrid.appendChild(newDiv);
     }
 }
+
+let button = document.querySelector(".change-button");
+button.addEventListener("click", (event) => {
+    let numberSides = +prompt("How many squares per side would you like? (Max 10)");
+
+    // Check for invalid input
+    if (!(Number.isInteger(numberSides))){
+        alert("Invalid input: Number must be an integer. Please try again!")
+        return;
+    }
+    if (!(numberSides > 0 && numberSides < 11)){
+        alert("Invalid input: Number must be between 1 and 10. Please try again!")
+        return;
+    }
+
+    clearGrid();
+    generateSquares(numberSides);
+});
